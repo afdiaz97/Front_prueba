@@ -4,6 +4,8 @@ import Login from './components/Login'
 import Inicio from './components/Inicio'
 import Cliente from './components/cliente'
 import ClienteForm from './components/crearcliente'
+import Producto from './components/producto'
+import ProductoForm from './components/crearproducto'
 import './App.css'
 import { useEffect, useState } from 'react'
 function App() {
@@ -19,6 +21,8 @@ function App() {
           <Route path="/inicio" element={<Inicio />} />
           <Route path="/cliente" element={<Cliente />} />
           <Route path="/crearcliente" element={<ClienteForm />} />
+          <Route path="/producto" element={<Producto />} />
+          <Route path="/crearproducto" element={<ProductoForm />} />
         </Routes>
     </div>
   );

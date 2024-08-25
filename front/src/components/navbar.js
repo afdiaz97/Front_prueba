@@ -20,6 +20,7 @@ const Dashboard = (props) => {
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                 <Nav.Link href="/cliente">Clientes</Nav.Link>
+                <Nav.Link href="/producto">Productos</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -8,19 +8,19 @@ import Table from 'react-bootstrap/Table';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Cliente = () => {
+const Producto = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const handleRedirect = () => {
-    navigate('/crearcliente'); // Cambia '/ruta-deseada' por la ruta a la que quieres redirigir
+    navigate('/crearproducto'); // Cambia '/ruta-deseada' por la ruta a la que quieres redirigir
   };
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/cliente');
+        const response = await axios.get('/producto');
         setData(response.data); 
       } catch (err) {
         setError(err);
@@ -34,11 +34,15 @@ const Cliente = () => {
 
   const columns = React.useMemo(
     () => [
-      { Header: 'Cédula', accessor: 'cedula' },
+      { Header: 'Codigo', accessor: 'Codigo' },
       { Header: 'Nombre', accessor: 'nombre' },
-      { Header: 'Email', accessor: 'email' },
-      { Header: 'Dirección', accessor: 'direccion' },
-      { Header: 'Teléfono', accessor: 'telefono' },
+      { Header: 'Valor', accessor: 'valor' },
+      {
+        Header: 'IVA',
+        accessor: 'iva',
+        Cell: ({ value }) => (value ? 'Sí' : 'No') // Convierte true/false a Sí/No
+      },
+      { Header: 'Porcentaje iva', accessor: 'valor_iva' },
     ],
     []
   );
@@ -92,4 +96,4 @@ const Cliente = () => {
   );
 };
 
-export default Cliente;
+export default Producto;
