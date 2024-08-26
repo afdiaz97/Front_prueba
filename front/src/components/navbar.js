@@ -21,6 +21,7 @@ const Dashboard = (props) => {
                 <Nav className="me-auto">
                 <Nav.Link href="/cliente">Clientes</Nav.Link>
                 <Nav.Link href="/producto">Productos</Nav.Link>
+                <Nav.Link href="/ventas">Ventas</Nav.Link>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
